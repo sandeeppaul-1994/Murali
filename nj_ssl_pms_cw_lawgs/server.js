@@ -11,23 +11,23 @@ lawgs.config({
 	}
 });
 // multiple folder path was used here for testing.
-app.get('/abc/a2b/v1/apple/accounts', function (req, res) {
+app.get('/abc/a2b/v1/apple/address', function (req, res) {
   res.send('accounts')
 	// fgnodejsloggroup should be created in CloudWatch log group earlier. 
 	// lawgs.getOrCreate was observed as not creating the log group
   var logger  = lawgs.getOrCreate('fgnodejsloggroup'); /* LogGroup */
 	// abca2bdevqa is the log stream name used to store logs
-  logger.log('abca2bdevqa', { team: 'apple accounts', weight: 7 });
+  logger.log('abca2bdevqa', { team: 'apple address', weight: 7 });
 })
 app.get('/abc/a2b/v1/apple/contacts', function (req, res) {
   res.send('contacts')
   var logger  = lawgs.getOrCreate('fgnodejsloggroup'); /* LogGroup */
   logger.log('abca2bdevqa', { team: 'apple contacts', weight: 9 });
 })
-app.get('/abc/a2b/v1/apple/leads', function (req, res) {
+app.get('/abc/a2b/v1/apple/customers', function (req, res) {
   res.send('leads')
   var logger  = lawgs.getOrCreate('fgnodejsloggroup'); /* LogGroup */
-  logger.log('abca2bdevqa', { team: 'leads', weight: 11 });
+  logger.log('abca2bdevqa', { team: 'customers', weight: 11 });
 })
 
 
